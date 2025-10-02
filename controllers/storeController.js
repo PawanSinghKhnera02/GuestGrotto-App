@@ -7,7 +7,7 @@ exports.getIndex = (req, res, next) => {
     .then((registeredHomes) => {
       res.render("store/index", {
         registeredHomes: registeredHomes,
-        pageTitle: "airbnb Home",
+        pageTitle: "GuestGrotto Home",
         currentPage: "index",
         isLoggedIn: req.isLoggedIn,
         user: req.session.user,
