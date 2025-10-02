@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 rounded-lg text-sm font-medium relative transition-all duration-300;
+  }
+  .nav-link:hover {
+    @apply bg-white bg-opacity-10;
+  }
+  .nav-link.active {
+    @apply bg-white bg-opacity-25 font-bold;
+  }
+
+  .mobile-nav-link {
+    @apply block px-4 py-3 rounded-lg text-sm font-medium w-full text-left transition-all duration-300;
+  }
+  .mobile-nav-link:hover {
+    @apply bg-white bg-opacity-10;
+  }
+  .mobile-nav-link.active {
+    @apply bg-white bg-opacity-25 font-bold;
+    /* Use plain CSS for border and padding */
+    border-left: 4px solid white;
+    padding-left: 1rem;
+  }
+
+  .auth-button {
+    @apply bg-white text-red-600 transition-all duration-300;
+  }
+  .auth-button:hover {
+    @apply bg-red-100;
+  }
+
+  button[type="submit"].nav-link {
+    @apply cursor-pointer border border-white border-opacity-30;
+  }
+  button[type="submit"].nav-link:hover {
+    @apply bg-red-500 border-opacity-100;
+  }
+}
+
+/* For underline effect, use plain CSS */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
